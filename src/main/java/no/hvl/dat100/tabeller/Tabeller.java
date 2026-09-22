@@ -4,9 +4,31 @@ public class Tabeller {
 
 	// a)
 	public static void skrivUt(int[] tabell) {
+		// get
+		int length = tabell.length;
+		if (length == 0) {
+			System.out.print("Emoty table");
+			return;
+		}
 
-		// TODO
-		throw new UnsupportedOperationException("Metoden skrivUt ikke implementert");
+		// Convert numbers to string and keep trac of longest
+		String[] nums = new String[length];
+		int longest = 0;
+		for (int y = 0; y < length; y++) {
+			String s = Integer.toString(tabell[y]);
+			nums[y] = s;
+			if (longest < s.length()) { longest = s.length(); }
+		}
+
+		// Set scale based of longest and create string per line
+		int space = longest + 2;
+		System.out.println("╭" + ("─".repeat(space) + "┬").repeat(length - 1) + "─".repeat(space) + "╮");
+
+		for (int y = 0; y < length; y++) {
+			System.out.print("│ " + nums[y] + " ".repeat(longest - nums[y].length()) + " ");
+		}
+
+		System.out.println("│\n╰" + ("─".repeat(space) + "┴").repeat(length - 1) + "─".repeat(space) + "╯");
 
 	}
 
