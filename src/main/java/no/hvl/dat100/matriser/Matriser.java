@@ -39,7 +39,7 @@ public class Matriser {
 	public static String tilStreng(int[][] matrise) {
 
 		// TODO
-		throw new UnsupportedOperationException("Metoden tilStreng ikke implementert");
+		throw new UnsupportedOperationException("Metoden skaler ikke implementert");
 		
 	}
 
